@@ -1,0 +1,35 @@
+<div class="p-3 bg-black text-white">
+    <div class="row">
+        <div class="col-3">
+            <img class="logo" src="https://static.vecteezy.com/system/resources/thumbnails/021/054/620/small/3d-gold-effect-letter-c-free-png.png" alt="err">
+        </div>
+        <div class="col-6">
+            <h1 class="title">
+                CRYPTO
+            </h1>
+        </div>
+        <div class="col-3"></div>
+    </div>
+</div>
+
+<table class="table table-dark">
+    <thead>
+      <tr style="text-align: right;">
+        <th style="text-align: left;" scope="col"> Rank </th>
+        <th style="text-align: left;" scope="col"> Name </th>
+        <th scope="col"> Price(Usd) </th>
+        <th scope="col"> Volume 24h </th>
+        <th scope="col"> Change percent 24Hr </th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr style="text-align: right;" *ngFor="let crypto of assets">
+        <td style="text-align: left; font-weight: bold;"> {{crypto.rank}} </td>
+        <td style="text-align: left;"> {{crypto.name | uppercase}} </td>
+        <td> $ {{crypto.priceUsd | number: '.2-2'}} </td>
+        <td> $ {{crypto.volumeUsd24Hr | number: '.2-2'}} </td>
+        <td *ngIf="crypto.changePercent24Hr >= 0" style="color: rgb(10, 214, 10);"> {{crypto.changePercent24Hr | number: '.2-2'}}% </td>
+        <td *ngIf="crypto.changePercent24Hr < 0" style="color: rgb(255, 0, 0);"> {{crypto.changePercent24Hr | number: '.2-2'}}% </td>
+      </tr>
+    </tbody>
+  </table>

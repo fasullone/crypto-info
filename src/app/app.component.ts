@@ -20,7 +20,7 @@ export class AppComponent {
   constructor(private cryptoSvc: CryptoService) { }
 
   ngOnInit() {
-    //this.loadAllAssets();
+    this.loadAllAssets();
   }
 
   loadAllAssets() {
